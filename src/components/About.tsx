@@ -22,7 +22,7 @@ export function About() {
           >
             <div className="aspect-square rounded-[40px] overflow-hidden shadow-2xl relative z-10">
               <img 
-                src="/src/assets/images/regenerated_image_1778149349238.webp" 
+                src="/src/assets/images/regenerated_image_1778150926850.png" 
                 alt="Dr. Suman Garg" 
                 className="w-full h-full object-cover"
               />

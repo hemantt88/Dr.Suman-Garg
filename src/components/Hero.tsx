@@ -76,7 +76,11 @@ export function Hero() {
 
             <div className="bg-slate-900 text-white p-6 rounded-3xl flex items-center gap-4 mt-8 shadow-xl border border-slate-700">
               <div className="w-16 h-16 rounded-2xl bg-slate-700 flex-shrink-0 overflow-hidden border-2 border-cyan-400">
-                <div className="w-full h-full bg-gradient-to-br from-cyan-400 to-blue-600"></div>
+                <img 
+                  src="/src/assets/images/regenerated_image_1778150926850.png" 
+                  alt="Dr. Suman Garg" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h4 className="font-bold">Dr. Suman Garg</h4>
@@ -93,7 +97,7 @@ export function Hero() {
           >
             <div className="relative z-10 overflow-hidden rounded-[40px] shadow-2xl aspect-[4/5] bg-gray-100 group">
               <img 
-                src="https://images.unsplash.com/photo-1629909613654-28a3a7c4eb40?auto=format&fit=crop&q=80&w=1000" 
+                src="/src/assets/images/regenerated_image_1778151041509.webp" 
                 alt="Modern Dental Clinic" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
