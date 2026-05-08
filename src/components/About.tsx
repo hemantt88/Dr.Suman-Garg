@@ -1,6 +1,9 @@
 import { motion } from "motion/react";
 import { CheckCircle2 } from "lucide-react";
 import { Button } from "./ui/Button";
+import founderImage from "../assets/images/regenerated_image_1778150926850.png";
+import drSumanImage from "../assets/images/regenerated_image_1778239744123.png";
+import drGopalImage from "../assets/images/regenerated_image_1778235663660.jpg";
 
 const doctors = [
   {
@@ -8,7 +11,7 @@ const doctors = [
     degree: "Dental Hygienist",
     specialization: "Founder & CEO",
     bio: "Deepak Garg is the visionary Founder and CEO of Allied Health Plus Hospital (AHPH). As a skilled Dental Hygienist, he has dedicated his career to establishing a healthcare network that prioritizes patient comfort and advanced medical care across Jaipur.",
-    image: "/src/assets/images/regenerated_image_1778150926850.png",
+    image: founderImage,
     highlights: [
       "Founder & CEO of AHPH",
       "Expert Dental Hygienist",
@@ -21,7 +24,7 @@ const doctors = [
     degree: "B.D.S, Dental Surgeon",
     specialization: "Dental Specialist",
     bio: "With a degree from Jodhpur and a strong foundation built in government hospital service, Dr. Suman Garg brings over 20,000 patient clinical experiences to her practice. Now working at Allied Health Plus, she is an integral part of a network of four clinics across Jaipur, offering comprehensive expertise in all dental procedures.",
-    image: "/src/assets/images/regenerated_image_1778239744123.png",
+    image: drSumanImage,
     highlights: [
       "20,000+ Successful Patient Cases",
       "Graduate of Jodhpur University",
@@ -34,7 +37,7 @@ const doctors = [
     degree: "MBBS, MS - Ophthalmology",
     specialization: "Eye Specialist",
     bio: "Dr. Gopal Krishna is a highly respected eye specialist in Jaipur, dedicated to providing comprehensive eye care with compassion, precision, and excellence. Known for his patient-friendly approach and commitment to vision health, he focuses on improving both eye health and quality of life through advanced treatments and personalized care for every patient.",
-    image: "/src/assets/images/regenerated_image_1778235663660.jpg",
+    image: drGopalImage,
     highlights: [
       "Comprehensive Eye Care Expert",
       "Advanced Surgical Precision",

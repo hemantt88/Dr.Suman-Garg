@@ -2,6 +2,8 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { Button } from "./ui/Button";
 import { Phone, Calendar, ArrowRight, Star } from "lucide-react";
+import founderImage from "../assets/images/regenerated_image_1778150926850.png";
+import clinicImage from "../assets/images/regenerated_image_1778151041509.webp";
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -78,7 +80,7 @@ export function Hero() {
             <div className="bg-slate-900 text-white p-6 rounded-3xl flex items-center gap-4 mt-8 shadow-xl border border-slate-700">
               <div className="w-16 h-16 rounded-2xl bg-slate-700 flex-shrink-0 overflow-hidden border-2 border-cyan-400">
                 <img 
-                  src="/src/assets/images/regenerated_image_1778150926850.png" 
+                  src={founderImage} 
                   alt="MR. DEEPAK GARG" 
                   className="w-full h-full object-cover"
                 />
@@ -98,7 +100,7 @@ export function Hero() {
           >
             <div className="relative z-10 overflow-hidden rounded-[40px] shadow-2xl aspect-[4/5] bg-gray-100 group">
               <img 
-                src="/src/assets/images/regenerated_image_1778151041509.webp" 
+                src={clinicImage} 
                 alt="Modern Dental Clinic" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
