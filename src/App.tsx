@@ -7,7 +7,6 @@ import { Services } from "./components/Services";
 import { Stats } from "./components/Stats";
 import { Reviews } from "./components/Reviews";
 import { BookingForm } from "./components/BookingForm";
-import { Gallery } from "./components/Gallery";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { WhatsAppButton } from "./components/WhatsAppButton";
@@ -53,7 +52,6 @@ export default function App() {
       <Services />
       <BookingForm />
       <Reviews />
-      <Gallery />
       <Contact />
       <Footer />
       <WhatsAppButton />

@@ -9,7 +9,6 @@ const navLinks = [
   { name: "About", href: "#about" },
   { name: "Services", href: "#services" },
   { name: "Reviews", href: "#reviews" },
-  { name: "Gallery", href: "#gallery" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -41,10 +40,10 @@ export function Navbar() {
           className="flex items-center gap-2"
         >
           <div className="w-8 h-8 bg-cyan-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-             S
+             A
           </div>
           <span className="font-bold text-lg tracking-tight text-slate-800">
-            Dr. Suman Garg <span className="text-cyan-600">Dental</span>
+            Allied Health Plus <span className="text-cyan-600">Hospital</span>
           </span>
         </motion.a>
 

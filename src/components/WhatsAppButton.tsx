@@ -3,7 +3,7 @@ import { MessageSquare, Phone } from "lucide-react";
 
 export function WhatsAppButton() {
   const handleWhatsApp = () => {
-    const text = "Hi Dr. Suman Garg Clinic, I'd like to book an appointment.";
+    const text = "Hi Allied Health Plus Hospital, I'd like to book an appointment.";
     window.open(`https://wa.me/917014811667?text=${encodeURIComponent(text)}`, "_blank");
   };
 

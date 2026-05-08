@@ -5,10 +5,10 @@ import { Button } from "./ui/Button";
 const contactCards = [
   {
     title: "Visit Us",
-    info: "Maharana Pratap Marg, Vaishali Marg W, near Rangoli Gardens, Jaipur",
+    info: "102, 1st Floor, Opp iPER Mart, Maharana Partap Marg, Vaishali Nagar, Jaipur",
     icon: MapPin,
     actionLabel: "Get Directions",
-    action: () => window.open("https://maps.google.com/?q=Maharana+Pratap+Marg,+Vaishali+Marg+W,+near+Rangoli+Gardens,+Jaipur,+Rajasthan+302024", "_blank")
+    action: () => window.open("https://www.google.com/maps/dir//Allied+Health+Plus+Hospital-+Dentist,+Skin+Care+%26+Eye+Care+in+Vaishali+Nagar,+102,+1st+Floor,+Opp+iPER+Mart,+Maharana+Partap+Marg,+Rangoli+Garden+Rd,+Vaishali+Nagar,+Jaipur,+Rajasthan+302021/@26.9096788,75.7199863,17z", "_blank")
   },
   {
     title: "Call Us",
@@ -19,10 +19,10 @@ const contactCards = [
   },
   {
     title: "Email Us",
-    info: "drsumangargclinic@gmail.com",
+    info: "alliedh8@gmail.com",
     icon: Mail,
     actionLabel: "Send Email",
-    action: () => window.open("mailto:drsumangargclinic@gmail.com")
+    action: () => window.open("mailto:alliedh8@gmail.com")
   },
   {
     title: "Working Hours",
@@ -83,7 +83,7 @@ export function Contact() {
              className="h-full min-h-[500px] rounded-[40px] overflow-hidden shadow-2xl border border-gray-100"
           >
              <iframe 
-               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.1234!2d75.7!3d26.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDU0JzA0LjQiTiA3NcKwNDInMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890" 
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.07722!2d75.7199863!3d26.9096788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db52f478a67eb%3A0x3b2ad25a363bc446!2sAllied%20Health%20Plus%20Hospital-%20Dentist%2C%20Skin%20Care%20%26%20Eye%20Care%20in%20Vaishali%20Nagar!5e0!3m2!1sen!2sin!4v1715165800000!5m2!1sen!2sin" 
                width="100%" 
                height="100%" 
                style={{ border: 0 }} 

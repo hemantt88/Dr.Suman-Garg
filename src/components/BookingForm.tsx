@@ -22,7 +22,7 @@ export function BookingForm() {
   };
 
   const handleWhatsApp = () => {
-    const text = `Hi Dr. Suman Garg Clinic, I would like to book an appointment for ${formData.treatment}. My name is ${formData.name}.`;
+    const text = `Hi Allied Health Plus Hospital, I would like to book an appointment for ${formData.treatment}. My name is ${formData.name}.`;
     window.open(`https://wa.me/917014811667?text=${encodeURIComponent(text)}`, "_blank");
   };
 
@@ -43,9 +43,11 @@ export function BookingForm() {
                     <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center group-hover:bg-cyan-600 transition-colors border border-slate-700">
                       <Phone size={20} />
                     </div>
-                    <div>
-                      <p className="text-[10px] uppercase tracking-widest text-slate-500 mb-1">Emergency Call</p>
-                      <p className="text-lg font-bold transition-colors group-hover:text-cyan-400">+91 70148 11667</p>
+                    <div className="flex flex-col">
+                      <p className="text-[10px] sm:text-lg font-bold transition-colors group-hover:text-cyan-400 whitespace-nowrap flex items-center gap-x-1.5 sm:gap-x-2">
+                        <span className="text-[8px] sm:text-[10px] uppercase tracking-widest text-slate-500 font-medium">Emergency Call:</span>
+                        <span>+91 70148 11667</span>
+                      </p>
                     </div>
                  </div>
                  
@@ -115,11 +117,18 @@ export function BookingForm() {
                         value={formData.treatment}
                         onChange={(e) => setFormData({...formData, treatment: e.target.value})}
                       >
-                        <option>Root Canal Treatment</option>
-                        <option>Braces & Aligners</option>
-                        <option>Teeth Whitening</option>
-                        <option>Dental Implants</option>
-                        <option>Smile Makeover</option>
+                        <optgroup label="Dental Care">
+                          <option>Root Canal Treatment</option>
+                          <option>Braces & Aligners</option>
+                          <option>Dental Implants</option>
+                          <option>Smile Makeover</option>
+                        </optgroup>
+                        <optgroup label="Eye Care">
+                          <option>Eye Examination</option>
+                          <option>Cataract Surgery</option>
+                          <option>Glasses & Lenses</option>
+                          <option>Digital Vision Care</option>
+                        </optgroup>
                         <option>General Consultation</option>
                       </select>
                     </div>

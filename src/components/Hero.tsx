@@ -41,17 +41,18 @@ export function Hero() {
               className="inline-flex items-center gap-2 bg-cyan-50 text-cyan-700 px-3 py-1 rounded-full w-fit shadow-sm border border-cyan-100"
             >
               <span className="text-xs font-bold tracking-tight uppercase">
-                #1 DENTIST IN JAIPUR
+                #1 Healthcare in Jaipur
               </span>
             </motion.div>
 
             <div className="space-y-4">
-              <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-slate-800 leading-[1.1] tracking-tight">
-                Your Perfect <br />
-                <span className="text-cyan-600">Smile</span> Starts Here
+              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-slate-800 leading-[1.1] tracking-tight">
+                Your Perfect Care for <br />
+                <span className="text-cyan-600">Skin, Eyes & Smiles</span> <br />
+                Starts Here
               </h1>
               <p className="text-lg md:text-xl text-slate-500 max-w-xl leading-relaxed">
-                Advanced & gentle dental care in Vaishali Nagar. Experience luxury healthcare with Dr. Suman Garg’s modern dental solutions.
+                Advanced & gentle dental, skin, and eye care. Experience luxury healthcare with our modern medical solutions at Allied Health Plus Hospital.
               </p>
             </div>
 
@@ -78,13 +79,13 @@ export function Hero() {
               <div className="w-16 h-16 rounded-2xl bg-slate-700 flex-shrink-0 overflow-hidden border-2 border-cyan-400">
                 <img 
                   src="/src/assets/images/regenerated_image_1778150926850.png" 
-                  alt="Dr. Suman Garg" 
+                  alt="MR. DEEPAK GARG" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div>
-                <h4 className="font-bold">Dr. Suman Garg</h4>
-                <p className="text-xs text-slate-400 leading-snug tracking-tight">Trusted Expert • 15+ Years Experience • Vaishali Nagar, Jaipur</p>
+                <h4 className="font-bold">MR. DEEPAK GARG</h4>
+                <p className="text-xs text-slate-400 leading-snug tracking-tight">DENTAL HYGIENIST FOUNDER & CEO-AHPH</p>
               </div>
             </div>
           </motion.div>
