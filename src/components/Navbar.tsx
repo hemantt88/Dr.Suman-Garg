@@ -4,6 +4,8 @@ import { Menu, X, Phone, Calendar } from "lucide-react";
 import { cn } from "../lib/utils";
 import { Button } from "./ui/Button";
 
+import { Logo } from "./ui/Logo";
+
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
@@ -37,26 +39,9 @@ export function Navbar() {
           href="#home"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex items-center gap-3"
+          className="flex items-center"
         >
-          <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center text-white relative group overflow-hidden border border-slate-800">
-             <motion.span 
-               initial={{ y: 20 }}
-               animate={{ y: 0 }}
-               className="font-bold text-xl relative z-10"
-             >
-               A
-             </motion.span>
-             <div className="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-          </div>
-          <div className="flex flex-col leading-none">
-            <span className="font-bold text-lg tracking-tight text-black">
-              Allied Health Plus
-            </span>
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-600">
-              Hospital
-            </span>
-          </div>
+          <Logo />
         </motion.a>
 
         {/* Desktop Nav */}

@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
 import { MessageCircle, Phone, Instagram, Facebook, Twitter, ShieldCheck } from "lucide-react";
 
+import { Logo } from "./ui/Logo";
+
 export function Footer() {
   return (
     <footer className="py-12 bg-black border-t border-slate-900 overflow-hidden relative">
@@ -8,11 +10,8 @@ export function Footer() {
        <div className="container mx-auto px-6">
          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
            <div className="flex flex-col gap-2 items-center md:items-start text-center md:text-left">
-             <div className="flex items-center gap-2">
-               <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs">A</div>
-               <span className="font-bold text-white tracking-tight">Allied Health Plus <span className="text-blue-600">Hospital</span></span>
-             </div>
-             <p className="text-[10px] text-slate-500 max-w-xs">Premium multi-specialty healthcare services in Vaishali Nagar, Jaipur. Committed to excellence in dental, skin, and eye care.</p>
+             <Logo isDark={true} showTagline={true} />
+             <p className="text-[10px] text-slate-500 max-w-xs ml-0 md:ml-12">Premium multi-specialty healthcare services in Vaishali Nagar, Jaipur. Committed to excellence in dental, skin, and eye care.</p>
            </div>
            
            <div className="flex flex-col items-center md:items-end gap-2 text-[10px] text-slate-400">
