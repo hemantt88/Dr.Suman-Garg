@@ -1,30 +1,14 @@
 import { motion } from "motion/react";
 import { CheckCircle2 } from "lucide-react";
 import { Button } from "./ui/Button";
-import founderImage from "../assets/images/regenerated_image_1778150926850.png";
-import drSumanImage from "../assets/images/regenerated_image_1778239744123.png";
-import drGopalImage from "../assets/images/regenerated_image_1778235663660.jpg";
 
 const doctors = [
-  {
-    name: "MR. DEEPAK GARG",
-    degree: "Dental Hygienist",
-    specialization: "Founder & CEO",
-    bio: "Deepak Garg is the visionary Founder and CEO of Allied Health Plus Hospital (AHPH). As a skilled Dental Hygienist, he has dedicated his career to establishing a healthcare network that prioritizes patient comfort and advanced medical care across Jaipur.",
-    image: founderImage,
-    highlights: [
-      "Founder & CEO of AHPH",
-      "Expert Dental Hygienist",
-      "Visionary Healthcare Leader",
-      "Committed to Patient Excellence",
-    ],
-  },
   {
     name: "Dr. Suman Garg",
     degree: "B.D.S, Dental Surgeon",
     specialization: "Dental Specialist",
     bio: "With a degree from Jodhpur and a strong foundation built in government hospital service, Dr. Suman Garg brings over 20,000 patient clinical experiences to her practice. Now working at Allied Health Plus, she is an integral part of a network of four clinics across Jaipur, offering comprehensive expertise in all dental procedures.",
-    image: drSumanImage,
+    image: "/src/assets/images/regenerated_image_1778415979485.jpg",
     highlights: [
       "20,000+ Successful Patient Cases",
       "Graduate of Jodhpur University",
@@ -37,7 +21,7 @@ const doctors = [
     degree: "MBBS, MS - Ophthalmology",
     specialization: "Eye Specialist",
     bio: "Dr. Gopal Krishna is a highly respected eye specialist in Jaipur, dedicated to providing comprehensive eye care with compassion, precision, and excellence. Known for his patient-friendly approach and commitment to vision health, he focuses on improving both eye health and quality of life through advanced treatments and personalized care for every patient.",
-    image: drGopalImage,
+    image: "/src/assets/images/regenerated_image_1778235663660.jpg",
     highlights: [
       "Comprehensive Eye Care Expert",
       "Advanced Surgical Precision",
@@ -56,7 +40,7 @@ export function About() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-cyan-700 font-bold uppercase text-[10px] tracking-widest px-4 py-1.5 bg-cyan-50 rounded-full inline-block mb-4"
+            className="text-blue-700 font-bold uppercase text-[10px] tracking-widest px-4 py-1.5 bg-blue-50 rounded-full inline-block mb-4"
           >
             ALLIED HEALTH PLUS HOSPITAL
           </motion.span>
@@ -64,9 +48,9 @@ export function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-display font-bold text-slate-800 mb-6"
+            className="text-3xl md:text-5xl font-display font-bold text-black mb-6"
           >
-            Meet Our <span className="text-cyan-600">Specialists Area</span>
+            Meet Our <span className="text-blue-600">Specialists Area</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -97,16 +81,16 @@ export function About() {
                   <img 
                     src={doctor.image} 
                     alt={doctor.name} 
-                    className={`w-full object-cover ${dIdx === 1 ? 'h-[704px]' : dIdx === 2 ? 'h-[1200px]' : 'h-full'}`}
+                    className={`w-full object-cover ${dIdx === 1 ? 'h-[450px] md:h-[704px]' : dIdx === 2 ? 'h-[680px] md:h-[1200px]' : 'h-full'}`}
                   />
                 </div>
                 {/* Decorative Elements */}
-                <div className={`absolute -bottom-10 ${dIdx % 2 === 0 ? '-right-10' : '-left-10'} w-64 h-64 bg-cyan-100/50 rounded-full blur-3xl -z-0 opacity-50`} />
+                <div className={`absolute -bottom-10 ${dIdx % 2 === 0 ? '-right-10' : '-left-10'} w-64 h-64 bg-blue-100/50 rounded-full blur-3xl -z-0 opacity-50`} />
                 <div className={`absolute top-1/2 -translate-y-1/2 glass-card p-6 rounded-2xl shadow-xl z-20 hidden md:block min-w-[240px] ${
                   dIdx % 2 === 1 ? '-right-12' : '-left-12'
                 }`}>
-                   <p className="text-cyan-600 font-bold uppercase text-[9px] tracking-[0.2em] mb-2">{doctor.specialization}</p>
-                   <p className="text-navy-premium font-bold text-xl">{doctor.name}</p>
+                   <p className="text-blue-600 font-bold uppercase text-[9px] tracking-[0.2em] mb-2">{doctor.specialization}</p>
+                   <p className="text-black font-bold text-xl">{doctor.name}</p>
                    <p className="text-gray-500 text-sm font-medium">{doctor.degree}</p>
                 </div>
               </motion.div>
@@ -118,9 +102,9 @@ export function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                   >
-                    <span className="text-cyan-600 text-xs font-bold uppercase tracking-widest block mb-4">Lead Specialist</span>
-                    <h3 className="text-2xl md:text-3xl font-display font-bold text-slate-800 leading-tight">
-                      Expert Care in <span className="text-cyan-600">{doctor.specialization}</span>
+                    <span className="text-blue-600 text-xs font-bold uppercase tracking-widest block mb-4">Lead Specialist</span>
+                    <h3 className="text-2xl md:text-3xl font-display font-bold text-black leading-tight">
+                      Expert Care in <span className="text-blue-600">{doctor.specialization}</span>
                     </h3>
                   </motion.div>
                   <motion.p
@@ -128,7 +112,7 @@ export function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="text-slate-500 leading-relaxed text-sm md:text-base border-l-4 border-cyan-100 pl-6 italic"
+                    className="text-slate-500 leading-relaxed text-sm md:text-base border-l-4 border-blue-100 pl-6 italic"
                   >
                     "{doctor.bio}"
                   </motion.p>
@@ -144,7 +128,7 @@ export function About() {
                       transition={{ delay: index * 0.1 }}
                       className="flex items-center gap-3 bg-white p-4 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
                     >
-                      <div className="w-8 h-8 bg-cyan-50 rounded-lg flex items-center justify-center text-cyan-600 shrink-0">
+                      <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 shrink-0">
                         <CheckCircle2 size={16} />
                       </div>
                       <span className="text-slate-700 font-bold text-xs">{item}</span>
@@ -159,12 +143,12 @@ export function About() {
                   transition={{ delay: 0.4 }}
                   className="pt-2"
                 >
-                  <Button 
-                    variant="primary" 
-                    size="lg"
-                    className="rounded-full px-10 shadow-lg shadow-cyan-100"
-                    onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-                  >
+                    <Button 
+                      variant="primary" 
+                      size="lg"
+                      className="rounded-full px-10 shadow-lg shadow-blue-100"
+                      onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+                    >
                     Book Appointment with {doctor.name.split(' ')[1]}
                   </Button>
                 </motion.div>

@@ -6,7 +6,7 @@ const testimonials = [
   {
     name: "Rahul Sharma",
     role: "Patient",
-    text: "The staff is courteous, and the clinic environment is very pleasant. Mr. Deepak is very experienced and made me feel at ease during my treatment.",
+    text: "The staff is courteous, and the clinic environment is very pleasant. Dr. Suman is very experienced and made me feel at ease during my treatment.",
     stars: 5,
   },
   {

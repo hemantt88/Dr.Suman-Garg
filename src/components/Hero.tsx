@@ -2,8 +2,6 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { Button } from "./ui/Button";
 import { Phone, Calendar, ArrowRight, Star } from "lucide-react";
-import founderImage from "../assets/images/regenerated_image_1778150926850.png";
-import clinicImage from "../assets/images/regenerated_image_1778151041509.webp";
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -19,11 +17,11 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <motion.div
           style={{ y: y1 }}
-          className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-cyan-100 rounded-full blur-[100px] opacity-40"
+          className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-100 rounded-full blur-[100px] opacity-40"
         />
         <motion.div
           style={{ y: y2 }}
-          className="absolute bottom-[-5%] left-[-5%] w-[400px] h-[400px] bg-blue-100 rounded-full blur-[80px] opacity-30"
+          className="absolute bottom-[-5%] left-[-5%] w-[400px] h-[400px] bg-slate-200 rounded-full blur-[80px] opacity-30"
         />
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.015]" />
       </div>
@@ -40,7 +38,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-cyan-50 text-cyan-700 px-3 py-1 rounded-full w-fit shadow-sm border border-cyan-100"
+              className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full w-fit shadow-sm border border-blue-100"
             >
               <span className="text-xs font-bold tracking-tight uppercase">
                 #1 Healthcare in Jaipur
@@ -48,9 +46,9 @@ export function Hero() {
             </motion.div>
 
             <div className="space-y-4">
-              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-slate-800 leading-[1.1] tracking-tight">
+              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-black leading-[1.1] tracking-tight">
                 Your Perfect Care for <br />
-                <span className="text-cyan-600">Skin, Eyes & Smiles</span> <br />
+                <span className="text-blue-600">Skin, Eyes & Smiles</span> <br />
                 Starts Here
               </h1>
               <p className="text-lg md:text-xl text-slate-500 max-w-xl leading-relaxed">
@@ -77,17 +75,17 @@ export function Hero() {
               </Button>
             </div>
 
-            <div className="bg-slate-900 text-white p-6 rounded-3xl flex items-center gap-4 mt-8 shadow-xl border border-slate-700">
-              <div className="w-16 h-16 rounded-2xl bg-slate-700 flex-shrink-0 overflow-hidden border-2 border-cyan-400">
+            <div className="bg-black text-white p-6 rounded-3xl flex items-center gap-4 mt-8 shadow-xl border border-slate-800">
+              <div className="w-16 h-16 rounded-2xl bg-slate-900 flex-shrink-0 overflow-hidden border-2 border-blue-400">
                 <img 
-                  src={founderImage} 
-                  alt="MR. DEEPAK GARG" 
+                  src="/src/assets/images/regenerated_image_1778415984568.jpg" 
+                  alt="Dr. Suman Garg" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div>
-                <h4 className="font-bold">MR. DEEPAK GARG</h4>
-                <p className="text-xs text-slate-400 leading-snug tracking-tight">DENTAL HYGIENIST FOUNDER & CEO-AHPH</p>
+                <h4 className="font-bold">Dr. Suman Garg</h4>
+                <p className="text-xs text-slate-400 leading-snug tracking-tight">B.D.S, DENTAL SURGEON • 20,000+ PATIENTS • VAISHALI NAGAR, JAIPUR</p>
               </div>
             </div>
           </motion.div>
@@ -100,7 +98,7 @@ export function Hero() {
           >
             <div className="relative z-10 overflow-hidden rounded-[40px] shadow-2xl aspect-[4/5] bg-gray-100 group">
               <img 
-                src={clinicImage} 
+                src="/src/assets/images/regenerated_image_1778151041509.webp" 
                 alt="Modern Dental Clinic" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />

@@ -10,7 +10,7 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="py-24 bg-gradient-to-r from-cyan-600 to-blue-600 text-white relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-800 text-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />

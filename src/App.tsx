@@ -43,7 +43,7 @@ export default function App() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-white selection:bg-dental-turquoise selection:text-white">
+    <main className="min-h-screen bg-slate-50 selection:bg-blue-600 selection:text-white">
       <LoadingScreen />
       <Navbar />
       <Hero />
