@@ -36,7 +36,7 @@ export function BookingForm() {
              
              <div>
                <h3 className="text-2xl font-display font-bold mb-6">Quick Access</h3>
-               <p className="text-slate-400 text-sm mb-12">Prefer direct contact? Our team is available 24/7 for dental emergencies.</p>
+               <p className="text-slate-400 text-sm mb-12">Our clinic is open 8 am to 11:30 pm daily for all your multi-specialty healthcare needs.</p>
                
                <div className="space-y-8">
                  <div className="flex items-center gap-6 group cursor-pointer" onClick={() => window.open("tel:7014811667")}>
@@ -45,7 +45,7 @@ export function BookingForm() {
                     </div>
                     <div className="flex flex-col">
                       <p className="text-[10px] sm:text-lg font-bold transition-colors group-hover:text-blue-400 whitespace-nowrap flex items-center gap-x-1.5 sm:gap-x-2">
-                        <span className="text-[8px] sm:text-[10px] uppercase tracking-widest text-slate-500 font-medium">Emergency Call:</span>
+                        <span className="text-[8px] sm:text-[10px] uppercase tracking-widest text-slate-500 font-medium">Direct Call:</span>
                         <span>+91 70148 11667</span>
                       </p>
                     </div>
@@ -66,7 +66,7 @@ export function BookingForm() {
               <div className="mt-12 pt-12 border-t border-slate-800">
                  <div className="flex items-center gap-3">
                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
-                   <span className="text-xs font-semibold text-slate-400 tracking-wide uppercase">Open 24 Hours Emergency</span>
+                   <span className="text-xs font-semibold text-slate-400 tracking-wide uppercase">Open 8 AM to 11:30 PM</span>
                  </div>
               </div>
           </div>

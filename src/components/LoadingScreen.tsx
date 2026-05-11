@@ -12,13 +12,13 @@ export function LoadingScreen() {
         className="fixed inset-0 z-[200] bg-black flex flex-col items-center justify-center pointer-events-none"
       >
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           className="flex flex-col items-center"
         >
-          <div className="bg-white p-10 rounded-[3.5rem] shadow-[0_0_100px_rgba(37,99,235,0.3)] mb-12 border border-blue-500/20">
-             <Logo className="scale-150" isDark={false} showTagline={true} />
+          <div className="mb-12">
+             <Logo variant="full" className="shadow-2xl" />
           </div>
           
           <div className="flex flex-col items-center text-center px-6 overflow-hidden">
@@ -28,7 +28,7 @@ export function LoadingScreen() {
               transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
             >
               <h2 className="text-white font-display font-medium text-3xl md:text-4xl tracking-[0.05em]">
-                Excellence in <span className="text-blue-500 font-bold">Healthcare</span>
+                Excellence in <span className="text-[#2EB1C2] font-bold">Healthcare</span>
               </h2>
             </motion.div>
             
@@ -38,11 +38,11 @@ export function LoadingScreen() {
               transition={{ delay: 1.2, duration: 1 }}
               className="mt-6 flex items-center gap-3"
             >
-              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+              <div className="w-2 h-2 bg-[#71C259] rounded-full animate-pulse" />
               <p className="text-slate-400 text-xs uppercase tracking-[0.5em] font-medium">
                 Hospital Network
               </p>
-              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+              <div className="w-2 h-2 bg-[#71C259] rounded-full animate-pulse" />
             </motion.div>
           </div>
         </motion.div>

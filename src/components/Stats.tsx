@@ -4,7 +4,7 @@ import { Shield, Sparkles, Timer, Heart, Smile } from "lucide-react";
 const stats = [
   { label: "Clinic Rating", value: "5.0", icon: Shield, suffix: "Stars" },
   { label: "Modern Equipment", value: "100", icon: Timer, suffix: "%" },
-  { label: "Patient Comfort", value: "24/7", icon: Heart, suffix: "Care" },
+  { label: "Patient Comfort", value: "8-11:30", icon: Heart, suffix: "PM" },
   { label: "Smiles Created", value: "5000", icon: Smile, suffix: "+" },
 ];
 

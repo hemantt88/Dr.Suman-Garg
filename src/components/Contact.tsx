@@ -26,7 +26,7 @@ const contactCards = [
   },
   {
     title: "Working Hours",
-    info: "Monday - Sunday: 24 Hours Open",
+    info: "Monday - Sunday: 8 AM - 11:30 PM",
     icon: Clock,
     actionLabel: "Book Appointment",
     action: () => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
@@ -45,7 +45,7 @@ export function Contact() {
                 Let's start your <span className="text-cyan-600">smile journey</span>
               </h2>
               <p className="text-slate-500 max-w-md text-sm">
-                Have questions or need an emergency consultation? Reach out to our specialized care team.
+                Have questions or need to schedule a consultation? Reach out to our specialized care team.
               </p>
             </div>
 
