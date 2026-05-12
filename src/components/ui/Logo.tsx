@@ -11,13 +11,14 @@ interface LogoProps {
 
 export function Logo({ className, variant = "simple" }: LogoProps) {
   const sizeClass =
-    variant === "full" ? "w-[340px] md:w-[420px]" : "w-[170px] md:w-[210px]";
+    variant === "full" ? "w-[340px] md:w-[420px]" : "w-[225px] md:w-[278px]";
+  const radiusClass = variant === "full" ? "rounded-2xl" : "rounded-lg";
 
   return (
     <img
       src={exactLogo}
       alt="Allied Health Plus Hospital logo"
-      className={cn("h-auto rounded-2xl", sizeClass, className)}
+      className={cn("h-auto", radiusClass, sizeClass, className)}
       loading="eager"
       decoding="async"
     />
