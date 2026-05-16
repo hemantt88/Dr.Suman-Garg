@@ -55,30 +55,35 @@ export function Navbar() {
               transition={{ delay: i * 0.1 }}
               className={cn(
                 "text-sm font-medium transition-colors",
-                link.name === "Home" ? "text-blue-700" : "text-slate-600 hover:text-blue-600"
+                link.name === "Home" 
+                  ? "text-blue-700 dark:text-blue-400" 
+                  : "text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400"
               )}
             >
               {link.name}
             </motion.a>
           ))}
-          <Button 
-            variant="secondary" 
-            size="sm" 
-            className="hidden lg:flex gap-2 !rounded-full px-5"
-            onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Book Appointment
-          </Button>
+          
+          <div className="flex items-center gap-4">
+            <Button 
+              variant="secondary" 
+              size="sm" 
+              className="hidden lg:flex gap-2 !rounded-full px-5"
+              onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Book Appointment
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden flex items-center gap-4">
-          <a href="tel:7014811667" className="p-2 text-navy-premium">
+        <div className="md:hidden flex items-center gap-2">
+          <a href="tel:7014811667" className="p-2 text-navy-premium dark:text-white">
             <Phone size={20} />
           </a>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 text-navy-premium"
+            className="p-2 text-navy-premium dark:text-white"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -92,7 +97,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white mt-4 rounded-3xl overflow-hidden shadow-2xl border border-gray-100"
+            className="md:hidden bg-white dark:bg-slate-900 mt-4 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-slate-800"
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
@@ -100,7 +105,7 @@ export function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-gray-700 hover:text-navy-premium p-2"
+                  className="text-lg font-medium text-gray-700 dark:text-slate-200 hover:text-navy-premium dark:hover:text-blue-400 p-2"
                 >
                   {link.name}
                 </a>

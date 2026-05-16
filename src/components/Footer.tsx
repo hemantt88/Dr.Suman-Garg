@@ -18,7 +18,7 @@ export function Footer() {
              <div className="flex gap-4 items-center mb-2">
                <span>Open 8:00 AM - 11:30 PM Daily</span>
              </div>
-             <div>© 2024 Allied Health Plus Hospital. All Rights Reserved.</div>
+             <div>© 2026 Allied Health Plus Hospital. All Rights Reserved.</div>
            </div>
          </div>
        </div>

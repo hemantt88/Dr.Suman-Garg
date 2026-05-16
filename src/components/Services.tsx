@@ -207,7 +207,7 @@ export function Services() {
   const filteredServices = services.filter(s => s.category === activeCategory);
 
   return (
-    <section id="services" className="py-24 bg-transparent relative overflow-hidden">
+    <section id="services" className="py-24 bg-transparent relative overflow-hidden transition-colors duration-500">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12">
           <motion.div
@@ -217,8 +217,8 @@ export function Services() {
             transition={{ duration: 0.4 }}
             className="flex items-center gap-2 mb-4"
           >
-            <div className="w-8 h-[1px] bg-blue-600" />
-            <span className="text-blue-600 font-bold text-[10px] uppercase tracking-[0.3em]">
+            <div className="w-8 h-[1px] bg-blue-600 dark:bg-blue-400" />
+            <span className="text-blue-600 dark:text-blue-400 font-bold text-[10px] uppercase tracking-[0.3em]">
               Premium Services
             </span>
           </motion.div>
@@ -228,9 +228,9 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="text-3xl md:text-5xl font-display font-medium text-black mb-6 tracking-tight"
+            className="text-3xl md:text-5xl font-display font-medium text-black dark:text-white mb-6 tracking-tight transition-colors duration-500"
           >
-            Multi-specialty healthcare for the <span className="text-blue-600 italic">whole family</span>
+            Multi-specialty healthcare for the <span className="text-blue-600 dark:text-blue-500 italic">whole family</span>
           </motion.h2>
           
           <motion.p
@@ -238,7 +238,7 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            className="text-slate-500 text-sm leading-relaxed mb-10 max-w-2xl px-4"
+            className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-10 max-w-2xl px-4 transition-colors duration-500"
           >
             Experience luxury healthcare with modern multi-specialty solutions designed for your comfort. Select a specialty below to view our specific treatments.
           </motion.p>
@@ -251,8 +251,8 @@ export function Services() {
                 className={cn(
                   "px-5 py-2.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all duration-200 border",
                   activeCategory === cat 
-                    ? "bg-blue-600 text-white shadow-lg shadow-blue-200 scale-105 border-blue-600" 
-                    : "bg-white text-slate-500 hover:bg-slate-50 border-slate-100 hover:border-slate-200"
+                    ? "bg-blue-600 dark:bg-blue-600 text-white shadow-lg shadow-blue-200 dark:shadow-none scale-105 border-blue-600" 
+                    : "bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 border-slate-100 dark:border-slate-800 hover:border-slate-200 dark:hover:border-slate-700"
                 )}
               >
                 {cat === "Hair" ? "Hair Transplant" : cat}
@@ -277,28 +277,29 @@ export function Services() {
                   initial={{ opacity: 0, y: 10, scale: 0.98 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ duration: 0.2, delay: index * 0.03 }}
-                  className="group p-6 md:p-8 rounded-3xl glass-card transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-200/50 flex flex-col items-center text-center relative overflow-hidden"
+                  className="group p-6 md:p-8 rounded-3xl glass-card transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-200/50 dark:hover:border-blue-500/30 flex flex-col items-center text-center relative overflow-hidden"
                 >
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-600/0 to-transparent group-hover:via-blue-600/20 transition-all" />
                   
                   <div className={cn(
                     "w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-sm",
-                    service.color
+                    service.color,
+                    "dark:bg-slate-800"
                   )}>
-                    <service.icon className={cn("w-7 h-7", service.iconColor)} />
+                    <service.icon className={cn("w-7 h-7", service.iconColor, "dark:text-blue-400")} />
                   </div>
                   
-                  <h3 className="text-lg font-bold text-black mb-3">
+                  <h3 className="text-lg font-bold text-black dark:text-white mb-3 transition-colors duration-500">
                     {service.title}
                   </h3>
                   
-                  <p className="text-slate-500 text-xs leading-relaxed mb-6">
+                  <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed mb-6 transition-colors duration-500">
                     {service.desc}
                   </p>
                   
                   <button 
                     onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="mt-auto px-4 py-2 rounded-full bg-slate-50 text-[9px] font-bold uppercase tracking-widest text-slate-600 group-hover:bg-blue-50 group-hover:text-blue-600 transition-all duration-300"
+                    className="mt-auto px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800 text-[9px] font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400 group-hover:bg-blue-50 dark:group-hover:bg-blue-900/50 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-all duration-300"
                   >
                     Book Appointment →
                   </button>

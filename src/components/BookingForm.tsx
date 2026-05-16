@@ -27,20 +27,20 @@ export function BookingForm() {
   };
 
   return (
-    <section id="booking" className="py-24 relative overflow-hidden bg-slate-50">
+    <section id="booking" className="py-24 relative overflow-hidden bg-white dark:bg-slate-950 transition-colors duration-500">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto rounded-[40px] bg-white shadow-sm overflow-hidden border border-slate-100 flex flex-col lg:flex-row">
+        <div className="max-w-6xl mx-auto rounded-[40px] bg-white dark:bg-slate-900 shadow-sm overflow-hidden border border-slate-100 dark:border-slate-800 flex flex-col lg:flex-row transition-all duration-500">
           {/* Left Info Column */}
-          <div className="lg:w-1/3 bg-black p-12 text-white flex flex-col justify-between relative overflow-hidden">
+          <div className="lg:w-1/3 bg-black dark:bg-slate-950 p-12 text-white flex flex-col justify-between relative overflow-hidden transition-colors duration-500">
              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-400/10 rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl" />
              
              <div>
                <h3 className="text-2xl font-display font-bold mb-6">Quick Access</h3>
-               <p className="text-slate-400 text-sm mb-12">Our clinic is open 8 am to 11:30 pm daily for all your multi-specialty healthcare needs.</p>
+               <p className="text-slate-400 dark:text-slate-500 text-sm mb-12 transition-colors duration-500">Our clinic is open 8 am to 11:30 pm daily for all your multi-specialty healthcare needs.</p>
                
                <div className="space-y-8">
                  <div className="flex items-center gap-6 group cursor-pointer" onClick={() => window.open("tel:7014811667")}>
-                    <div className="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center group-hover:bg-blue-600 transition-colors border border-slate-700">
+                    <div className="w-12 h-12 bg-slate-900 dark:bg-slate-900 rounded-xl flex items-center justify-center group-hover:bg-blue-600 transition-colors border border-slate-700">
                       <Phone size={20} />
                     </div>
                     <div className="flex flex-col">
@@ -52,7 +52,7 @@ export function BookingForm() {
                  </div>
                  
                  <div className="flex items-center gap-6 group cursor-pointer" onClick={handleWhatsApp}>
-                    <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center group-hover:bg-green-500 transition-colors border border-slate-700">
+                    <div className="w-12 h-12 bg-slate-800 dark:bg-slate-900 rounded-xl flex items-center justify-center group-hover:bg-green-500 transition-colors border border-slate-700">
                       <MessageSquare size={20} />
                     </div>
                     <div>
@@ -66,13 +66,13 @@ export function BookingForm() {
               <div className="mt-12 pt-12 border-t border-slate-800">
                  <div className="flex items-center gap-3">
                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse" />
-                   <span className="text-xs font-semibold text-slate-400 tracking-wide uppercase">Open 8 AM to 11:30 PM</span>
+                   <span className="text-xs font-semibold text-slate-400 dark:text-slate-500 tracking-wide uppercase">Open 8 AM to 11:30 PM</span>
                  </div>
               </div>
           </div>
 
           {/* Right Form Column */}
-          <div className="lg:w-2/3 p-12 lg:p-16 relative">
+          <div className="lg:w-2/3 p-12 lg:p-16 relative bg-white dark:bg-slate-900 transition-colors duration-500">
             <AnimatePresence mode="wait">
               {step === 1 ? (
                 <motion.div
@@ -83,11 +83,11 @@ export function BookingForm() {
                   className="space-y-10"
                 >
                   <div className="space-y-2">
-                    <h2 className="text-3xl font-display font-bold text-black flex items-center gap-2">
+                    <h2 className="text-3xl font-display font-bold text-black dark:text-white flex items-center gap-2 transition-colors duration-500">
                       <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
                       Quick Booking
                     </h2>
-                    <p className="text-slate-400 text-sm">Fill the form and we'll confirm within 15 minutes.</p>
+                    <p className="text-slate-400 dark:text-slate-500 text-sm">Fill the form and we'll confirm within 15 minutes.</p>
                   </div>
 
                   <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6">
@@ -96,7 +96,7 @@ export function BookingForm() {
                         required
                         type="text" 
                         placeholder="Full Name"
-                        className="w-full bg-slate-50 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-blue-500 transition-all outline-none"
+                        className="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-blue-500 dark:text-white transition-all outline-none"
                         value={formData.name}
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                       />
@@ -106,45 +106,45 @@ export function BookingForm() {
                         required
                         type="tel" 
                         placeholder="Phone Number"
-                        className="w-full bg-slate-50 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-blue-500 transition-all outline-none"
+                        className="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-blue-500 dark:text-white transition-all outline-none"
                         value={formData.phone}
                         onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       />
                     </div>
                     <div className="space-y-2">
                       <select 
-                        className="w-full bg-slate-50 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-blue-500 transition-all outline-none appearance-none"
+                        className="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-blue-500 dark:text-white transition-all outline-none appearance-none"
                         value={formData.treatment}
                         onChange={(e) => setFormData({...formData, treatment: e.target.value})}
                       >
-                        <optgroup label="Dental Care">
+                        <optgroup label="Dental Care" className="dark:bg-slate-900">
                           <option>Root Canal Treatment</option>
                           <option>Braces & Aligners</option>
                           <option>Dental Implants</option>
                         </optgroup>
-                        <optgroup label="Skin Care">
+                        <optgroup label="Skin Care" className="dark:bg-slate-900">
                           <option>Laser Hair Removal</option>
                           <option>Chemical Peels</option>
                           <option>Anti-Aging Treatments</option>
                         </optgroup>
-                        <optgroup label="Hair Transplant">
+                        <optgroup label="Hair Transplant" className="dark:bg-slate-900">
                           <option>FUE Hair Transplant</option>
                           <option>PRP Therapy</option>
                           <option>Beard Transplant</option>
                         </optgroup>
-                        <optgroup label="Eye Care">
+                        <optgroup label="Eye Care" className="dark:bg-slate-900">
                           <option>Cataract Surgery</option>
                           <option>LASIK Vision Correction</option>
                           <option>Dry Eye Management</option>
                         </optgroup>
-                        <option>General Consultation</option>
+                        <option className="dark:bg-slate-900">General Consultation</option>
                       </select>
                     </div>
                     <div className="space-y-2">
                       <input 
                         required
                         type="date" 
-                        className="w-full bg-slate-50 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-blue-500 transition-all outline-none"
+                        className="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-blue-500 dark:text-white transition-all outline-none"
                         value={formData.date}
                         onChange={(e) => setFormData({...formData, date: e.target.value})}
                       />
@@ -175,8 +175,8 @@ export function BookingForm() {
                     <div className="absolute inset-0 bg-blue-600 rounded-full animate-ping opacity-20" />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-3xl font-display font-bold text-black">Success!</h3>
-                    <p className="text-slate-500 text-sm max-w-xs">Thank you, {formData.name}. We will call you at {formData.phone} shortly.</p>
+                    <h3 className="text-3xl font-display font-bold text-black dark:text-white transition-colors duration-500">Success!</h3>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm max-w-xs transition-colors duration-500">Thank you, {formData.name}. We will call you at {formData.phone} shortly.</p>
                   </div>
                   <Button variant="outline" size="md" onClick={() => setStep(1)} className="!rounded-xl px-12">
                     Done

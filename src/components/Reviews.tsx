@@ -30,24 +30,24 @@ export function Reviews() {
   const prev = () => setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section id="reviews" className="py-24 bg-white relative overflow-hidden">
+    <section id="reviews" className="py-24 bg-white dark:bg-slate-950 relative overflow-hidden transition-colors duration-500">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center mb-16">
-          <span className="text-dental-turquoise font-display font-medium tracking-[0.2em] uppercase text-xs mb-4">
+          <span className="text-dental-turquoise dark:text-blue-400 font-display font-medium tracking-[0.2em] uppercase text-xs mb-4">
             Testimonials
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-navy-premium">
-            Patient <span className="italic font-serif font-medium text-dental-turquoise">Stories</span>
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-navy-premium dark:text-white transition-colors duration-500">
+            Patient <span className="italic font-serif font-medium text-dental-turquoise dark:text-blue-400">Stories</span>
           </h2>
         </div>
 
         <div className="max-w-4xl mx-auto relative">
-          <div className="grid md:grid-cols-[auto_1fr] gap-8 items-center bg-soft-gray rounded-[40px] p-8 md:p-16 relative">
-            <div className="absolute top-8 right-8 text-dental-blue opacity-50">
+          <div className="grid md:grid-cols-[auto_1fr] gap-8 items-center bg-soft-gray dark:bg-slate-900 rounded-[40px] p-8 md:p-16 relative border dark:border-slate-800 transition-all duration-500">
+            <div className="absolute top-8 right-8 text-dental-blue dark:text-blue-900/40 opacity-50">
                <Quote size={80} />
             </div>
 
-            <div className="w-24 h-24 md:w-32 md:h-32 bg-navy-premium rounded-[32px] overflow-hidden flex-shrink-0">
+            <div className="w-24 h-24 md:w-32 md:h-32 bg-navy-premium dark:bg-blue-600 rounded-[32px] overflow-hidden flex-shrink-0 transition-colors duration-500">
                <img 
                  src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${testimonials[active].name}`} 
                  alt={testimonials[active].name} 
@@ -66,12 +66,12 @@ export function Reviews() {
                   <Star key={i} size={18} className="fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif italic">
+              <p className="text-xl md:text-2xl text-gray-700 dark:text-slate-200 leading-relaxed font-serif italic transition-colors duration-500">
                 "{testimonials[active].text}"
               </p>
               <div>
-                <p className="font-bold text-navy-premium text-lg">{testimonials[active].name}</p>
-                <p className="text-gray-500 text-sm uppercase tracking-widest">{testimonials[active].role}</p>
+                <p className="font-bold text-navy-premium dark:text-white text-lg transition-colors duration-500">{testimonials[active].name}</p>
+                <p className="text-gray-500 dark:text-slate-400 text-sm uppercase tracking-widest">{testimonials[active].role}</p>
               </div>
             </motion.div>
           </div>
@@ -80,13 +80,13 @@ export function Reviews() {
           <div className="flex justify-center gap-4 mt-12">
             <button 
               onClick={prev}
-              className="w-12 h-12 rounded-full border border-navy-premium text-navy-premium flex items-center justify-center hover:bg-navy-premium hover:text-white transition-all"
+              className="w-12 h-12 rounded-full border border-navy-premium dark:border-white/20 text-navy-premium dark:text-white flex items-center justify-center hover:bg-navy-premium dark:hover:bg-blue-600 hover:text-white transition-all"
             >
               <ChevronLeft size={24} />
             </button>
             <button 
               onClick={next}
-              className="w-12 h-12 rounded-full border border-navy-premium text-navy-premium flex items-center justify-center hover:bg-navy-premium hover:text-white transition-all"
+              className="w-12 h-12 rounded-full border border-navy-premium dark:border-white/20 text-navy-premium dark:text-white flex items-center justify-center hover:bg-navy-premium dark:hover:bg-blue-600 hover:text-white transition-all"
             >
               <ChevronRight size={24} />
             </button>

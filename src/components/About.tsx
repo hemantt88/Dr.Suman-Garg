@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { CheckCircle2 } from "lucide-react";
 import drSumanImg from "../assets/images/regenerated_image_1778415979485.jpg";
 import drGopalImg from "../assets/images/regenerated_image_1778235663660.jpg";
+import mrDeepakImg from "../assets/images/regenerated_image_1778679514018.jpg";
 import { Button } from "./ui/Button";
 
 const doctors = [
@@ -31,18 +32,31 @@ const doctors = [
       "Trusted by Families in Jaipur",
     ],
   },
+  {
+    name: "Mr. Deepak Garg",
+    degree: "Healthcare Entrepreneur & Dental Hygienist",
+    specialization: "Preventive Healthcare",
+    bio: "Mr. Deepak Garg is a passionate healthcare entrepreneur and dental hygienist known for his dedication to patient care, preventive healthcare, and clinical excellence. Through Allied Health Plus, he aims to deliver trusted, compassionate, and advanced healthcare services for every patient.",
+    image: mrDeepakImg,
+    highlights: [
+      "Visionary Healthcare Explorer",
+      "Dental Hygiene Expert",
+      "Patient-Centric Leadership",
+      "Modern Healthcare Solutions",
+    ],
+  },
 ];
 
 export function About() {
   return (
-    <section id="about" className="py-24 bg-soft-gray overflow-hidden">
+    <section id="about" className="py-24 bg-white dark:bg-slate-900/50 overflow-hidden transition-colors duration-500">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-blue-700 font-bold uppercase text-[10px] tracking-widest px-4 py-1.5 bg-blue-50 rounded-full inline-block mb-4"
+            className="text-blue-700 dark:text-blue-400 font-bold uppercase text-[10px] tracking-widest px-4 py-1.5 bg-blue-50 dark:bg-blue-900/30 rounded-full inline-block mb-4"
           >
             ALLIED HEALTH PLUS HOSPITAL
           </motion.span>
@@ -50,15 +64,15 @@ export function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-display font-bold text-black mb-6"
+            className="text-3xl md:text-5xl font-display font-bold text-black dark:text-white mb-6 transition-colors duration-500"
           >
-            Meet Our <span className="text-blue-600">Specialists Area</span>
+            Meet Our <span className="text-blue-600 dark:text-blue-500">Specialists Area</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-slate-500 max-w-2xl mx-auto text-sm md:text-base leading-relaxed"
+            className="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-sm md:text-base leading-relaxed transition-colors duration-500"
           >
             Our team of dedicated medical experts brings together decades of experience in Dental, Skin, and Eye care, providing world-class healthcare services in the heart of Jaipur.
           </motion.p>
@@ -79,21 +93,21 @@ export function About() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="relative"
               >
-                <div className="aspect-[4/5] md:aspect-square rounded-[40px] overflow-hidden shadow-2xl relative z-10 border-8 border-white">
+                <div className="aspect-[4/5] md:aspect-square rounded-[40px] overflow-hidden shadow-2xl relative z-10 border-8 border-white dark:border-slate-800 transition-colors duration-500">
                   <img 
                     src={doctor.image} 
                     alt={doctor.name} 
-                    className={`w-full object-cover ${dIdx === 1 ? 'h-[450px] md:h-[704px]' : dIdx === 2 ? 'h-[680px] md:h-[1200px]' : 'h-full'}`}
+                    className={`w-full object-cover transition-opacity duration-500 opacity-95 dark:opacity-85 ${dIdx === 1 ? 'h-[450px] md:h-[704px]' : dIdx === 2 ? 'h-[680px] md:h-[1200px]' : 'h-full'}`}
                   />
                 </div>
                 {/* Decorative Elements */}
-                <div className={`absolute -bottom-10 ${dIdx % 2 === 0 ? '-right-10' : '-left-10'} w-64 h-64 bg-blue-100/50 rounded-full blur-3xl -z-0 opacity-50`} />
+                <div className={`absolute -bottom-10 ${dIdx % 2 === 0 ? '-right-10' : '-left-10'} w-64 h-64 bg-blue-100/50 dark:bg-blue-900/20 rounded-full blur-3xl -z-0 opacity-50 dark:opacity-30`} />
                 <div className={`absolute top-1/2 -translate-y-1/2 glass-card p-6 rounded-2xl shadow-xl z-20 hidden md:block min-w-[240px] ${
                   dIdx % 2 === 1 ? '-right-12' : '-left-12'
                 }`}>
-                   <p className="text-blue-600 font-bold uppercase text-[9px] tracking-[0.2em] mb-2">{doctor.specialization}</p>
-                   <p className="text-black font-bold text-xl">{doctor.name}</p>
-                   <p className="text-gray-500 text-sm font-medium">{doctor.degree}</p>
+                   <p className="text-blue-600 dark:text-blue-400 font-bold uppercase text-[9px] tracking-[0.2em] mb-2">{doctor.specialization}</p>
+                   <p className="text-black dark:text-white font-bold text-xl">{doctor.name}</p>
+                   <p className="text-gray-500 dark:text-slate-400 text-sm font-medium">{doctor.degree}</p>
                 </div>
               </motion.div>
 
@@ -104,9 +118,11 @@ export function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                   >
-                    <span className="text-blue-600 text-xs font-bold uppercase tracking-widest block mb-4">Lead Specialist</span>
-                    <h3 className="text-2xl md:text-3xl font-display font-bold text-black leading-tight">
-                      Expert Care in <span className="text-blue-600">{doctor.specialization}</span>
+                    <span className="text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest block mb-4">
+                      {doctor.name.startsWith('Mr.') ? 'Our Founder' : 'Lead Specialist'}
+                    </span>
+                    <h3 className="text-2xl md:text-3xl font-display font-bold text-black dark:text-white leading-tight transition-colors duration-500">
+                      Expert Care in <span className="text-blue-600 dark:text-blue-500">{doctor.specialization}</span>
                     </h3>
                   </motion.div>
                   <motion.p
@@ -114,7 +130,7 @@ export function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
-                    className="text-slate-500 leading-relaxed text-sm md:text-base border-l-4 border-blue-100 pl-6 italic"
+                    className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm md:text-base border-l-4 border-blue-100 dark:border-blue-900/50 pl-6 italic transition-colors duration-500"
                   >
                     "{doctor.bio}"
                   </motion.p>
@@ -128,12 +144,12 @@ export function About() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex items-center gap-3 bg-white p-4 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow"
+                      className="flex items-center gap-3 bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-all duration-300"
                     >
-                      <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 shrink-0">
+                      <div className="w-8 h-8 bg-blue-50 dark:bg-blue-900/30 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
                         <CheckCircle2 size={16} />
                       </div>
-                      <span className="text-slate-700 font-bold text-xs">{item}</span>
+                      <span className="text-slate-700 dark:text-slate-200 font-bold text-xs">{item}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -148,7 +164,7 @@ export function About() {
                     <Button 
                       variant="primary" 
                       size="lg"
-                      className="rounded-full px-10 shadow-lg shadow-blue-100"
+                      className="rounded-full px-10 shadow-lg shadow-blue-100 dark:shadow-none"
                       onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
                     >
                     Book Appointment with {doctor.name.split(' ')[1]}
