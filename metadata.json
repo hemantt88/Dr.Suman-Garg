@@ -2,5 +2,5 @@
   "name": "Allied Health Plus Hospital",
   "description": "Premium dental, skin, and eye care in Vaishali Nagar, Jaipur. Allied Health Plus Hospital offers advanced medical solutions under the leadership of Dr. Suman Garg and Mr. Deepak Garg.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

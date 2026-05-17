@@ -1,25 +1,55 @@
 import { motion } from "motion/react";
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import patientImg2 from "../assets/images/regenerated_image_1778911566519.jpg";
+import patientImg3 from "../assets/images/regenerated_image_1778911788744.webp";
+import patientImg4 from "../assets/images/regenerated_image_1778911915453.webp";
+import patientImg5 from "../assets/images/regenerated_image_1778912027136.webp";
+import patientImg6 from "../assets/images/regenerated_image_1778912219921.webp";
+import patientImg7 from "../assets/images/regenerated_image_1778913774391.webp";
 
 const testimonials = [
   {
-    name: "Rahul Sharma",
-    role: "Patient",
-    text: "The staff is courteous, and the clinic environment is very pleasant. Dr. Suman is very experienced and made me feel at ease during my treatment.",
+    name: "Anjali Gupta",
+    role: "RCT Patient",
+    text: "I was terrified of root canal treatment, but the advanced painless RCT here changed my perspective. Modern equipment and a very gentle approach. Highly recommended!",
     stars: 5,
+    image: patientImg2
   },
   {
-    name: "Priya Singh",
-    role: "Patient",
-    text: "Highly recommend this place for anyone looking for braces or aligners. The results are incredible and the process was smooth and painless.",
+    name: "Suresh Khanna",
+    role: "Cataract (Phaco) Patient",
+    text: "Had my cataract surgery using the Phaco system. The procedure was quick, and my vision was restored within days. Excellent eye care facility in Jaipur.",
     stars: 5,
+    image: patientImg3
   },
   {
-    name: "Amit Verma",
-    role: "Patient",
-    text: "Professional and caring treatment experience. The clinic follows high hygiene standards which is very important to me. Truly the best in Jaipur.",
+    name: "Meera Deshmukh",
+    role: "Retina & Fundus Exam Patient",
+    text: "The retina and fundus examination was very detailed. The doctors explained every aspect of my eye health clearly. Very tech-forward diagnostic approach.",
     stars: 5,
+    image: patientImg4
+  },
+  {
+    name: "Sumit Singhania",
+    role: "Laser Hair Removal Patient",
+    text: "Started my advance laser hair removal sessions here. The technology is safe and effective on Indian skin. I'm already seeing great results after just three sittings.",
+    stars: 5,
+    image: patientImg5
+  },
+  {
+    name: "Rohit Kapoor",
+    role: "Aesthetics Patient",
+    text: "The Botox and Fillers treatment by the specialists here gave me a subtle, youthful glow. They definitely have an artistic touch for facial aesthetics.",
+    stars: 5,
+    image: patientImg6
+  },
+  {
+    name: "Karan Johar",
+    role: "Hair PRP Patient",
+    text: "I visited for Hair PRP (Rich Plasma Therapy) to combat thinning. The procedure was comfortable and I've noticed significant improvement in my hair quality.",
+    stars: 5,
+    image: patientImg7
   },
 ];
 
@@ -49,7 +79,7 @@ export function Reviews() {
 
             <div className="w-24 h-24 md:w-32 md:h-32 bg-navy-premium dark:bg-blue-600 rounded-[32px] overflow-hidden flex-shrink-0 transition-colors duration-500">
                <img 
-                 src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${testimonials[active].name}`} 
+                 src={testimonials[active].image || `https://api.dicebear.com/7.x/avataaars/svg?seed=${testimonials[active].name}`} 
                  alt={testimonials[active].name} 
                  className="w-full h-full object-cover"
                />

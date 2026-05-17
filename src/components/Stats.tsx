@@ -4,7 +4,7 @@ import { Shield, Sparkles, Timer, Heart, Smile } from "lucide-react";
 const stats = [
   { label: "Clinic Rating", value: "5.0", icon: Shield, suffix: "Stars" },
   { label: "Modern Equipment", value: "100", icon: Timer, suffix: "%" },
-  { label: "Patient Comfort", value: "8-11:30", icon: Heart, suffix: "PM" },
+  { label: "Daily Care Hours", value: "8 AM-11:30 PM", icon: Heart, suffix: "" },
   { label: "Smiles Created", value: "5000", icon: Smile, suffix: "+" },
 ];
 
@@ -28,6 +28,9 @@ export function Stats() {
               >
                 <div className="text-4xl md:text-5xl font-display font-bold mb-1">
                   {stat.value}
+                  {stat.suffix && (
+                    <span className="text-xl ml-1 opacity-80">{stat.suffix}</span>
+                  )}
                 </div>
                 <div className="text-[10px] opacity-70 uppercase tracking-[0.2em] font-bold">
                   {stat.label}

@@ -31,14 +31,12 @@ export default function App() {
     if (typeof window !== "undefined") {
       const saved = localStorage.getItem("theme") as Theme;
       if (saved) return saved;
-      // Default to light for medical app often preferred, or check media query
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
     }
     return "light";
   });
 
   useEffect(() => {
-    // Apply theme to document
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
@@ -65,10 +63,12 @@ export default function App() {
     function raf(time: number) {
       lenis.raf(time);
       
-      // Update progress bar
-      const progress = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-      const progressBar = document.getElementById('scroll-progress');
-      if (progressBar) progressBar.style.width = `${progress}%`;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollHeight > 0) {
+        const progress = (window.scrollY / scrollHeight) * 100;
+        const progressBar = document.getElementById('scroll-progress');
+        if (progressBar) progressBar.style.width = `${progress}%`;
+      }
       
       requestAnimationFrame(raf);
     }
@@ -85,6 +85,7 @@ export default function App() {
       <main className="min-h-screen bg-white dark:bg-slate-950 selection:bg-blue-600 selection:text-white transition-colors duration-500">
         <LoadingScreen />
         <Navbar />
+        
         <Hero />
         <Stats />
         <About />
@@ -92,12 +93,13 @@ export default function App() {
         <BookingForm />
         <Reviews />
         <Contact />
+
         <Footer />
         <WhatsAppButton />
 
         {/* Scroll Progress Indicator */}
         <div className="fixed top-0 left-0 right-0 h-1 z-[100] bg-gray-100 dark:bg-slate-800 pointer-events-none">
-           <div id="scroll-progress" className="h-full bg-dental-turquoise transition-all duration-100 w-0" />
+           <div id="scroll-progress" className="h-full bg-blue-600 transition-all duration-100 w-0" />
         </div>
       </main>
     </ThemeContext.Provider>

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Stethoscope } from "lucide-react";
 import drSumanImg from "../assets/images/regenerated_image_1778415979485.jpg";
 import drGopalImg from "../assets/images/regenerated_image_1778235663660.jpg";
 import mrDeepakImg from "../assets/images/regenerated_image_1778679514018.jpg";
@@ -34,16 +34,34 @@ const doctors = [
   },
   {
     name: "Mr. Deepak Garg",
-    degree: "Healthcare Entrepreneur & Dental Hygienist",
+    degree: "Founder and CEO",
     specialization: "Preventive Healthcare",
-    bio: "Mr. Deepak Garg is a passionate healthcare entrepreneur and dental hygienist known for his dedication to patient care, preventive healthcare, and clinical excellence. Through Allied Health Plus, he aims to deliver trusted, compassionate, and advanced healthcare services for every patient.",
+    bio: "Mr. Deepak Garg is the Founder and CEO of Allied Health Plus, driven by a passion for clinical excellence and patient-centric care. Under his visionary leadership, the organization focuses on delivering trusted, compassionate, and advanced healthcare solutions that prioritize preventive wellness for all.",
     image: mrDeepakImg,
     highlights: [
-      "Visionary Healthcare Explorer",
-      "Dental Hygiene Expert",
-      "Patient-Centric Leadership",
+      "Founder & CEO",
+      "Visionary Healthcare Leader",
+      "Patient-Centric Approach",
       "Modern Healthcare Solutions",
     ],
+  },
+];
+
+const expertTeam = [
+  {
+    name: "Dr. Pulkit Sharma",
+    degree: "Orthodontic MDS",
+    specialization: "Orthodontics",
+  },
+  {
+    name: "Dr. Ekta Parihar",
+    degree: "Dentist BDS MPH",
+    specialization: "Public Health Dentistry",
+  },
+  {
+    name: "Dr. Arun S",
+    degree: "Expert Consultant",
+    specialization: "Specialized Care",
   },
 ];
 
@@ -97,13 +115,19 @@ export function About() {
                   <img 
                     src={doctor.image} 
                     alt={doctor.name} 
-                    className={`w-full object-cover transition-opacity duration-500 opacity-95 dark:opacity-85 ${dIdx === 1 ? 'h-[450px] md:h-[704px]' : dIdx === 2 ? 'h-[680px] md:h-[1200px]' : 'h-full'}`}
+                    className={`object-cover transition-opacity duration-500 opacity-95 dark:opacity-85 ${
+                      dIdx === 1 
+                        ? 'w-full h-[450px] md:h-[704px]' 
+                        : dIdx === 2 
+                          ? 'w-full md:w-[1100px] h-[600px] md:h-[1000px]' 
+                          : 'w-full h-full'
+                    }`}
                   />
                 </div>
                 {/* Decorative Elements */}
                 <div className={`absolute -bottom-10 ${dIdx % 2 === 0 ? '-right-10' : '-left-10'} w-64 h-64 bg-blue-100/50 dark:bg-blue-900/20 rounded-full blur-3xl -z-0 opacity-50 dark:opacity-30`} />
                 <div className={`absolute top-1/2 -translate-y-1/2 glass-card p-6 rounded-2xl shadow-xl z-20 hidden md:block min-w-[240px] ${
-                  dIdx % 2 === 1 ? '-right-12' : '-left-12'
+                  (dIdx % 2 === 1 || dIdx === 2) ? '-right-12' : '-left-12'
                 }`}>
                    <p className="text-blue-600 dark:text-blue-400 font-bold uppercase text-[9px] tracking-[0.2em] mb-2">{doctor.specialization}</p>
                    <p className="text-black dark:text-white font-bold text-xl">{doctor.name}</p>
@@ -174,7 +198,53 @@ export function About() {
             </div>
           ))}
         </div>
+
+        {/* New Expert Team Section */}
+        <div className="mt-32 pt-24 border-t border-slate-100 dark:border-slate-800">
+          <div className="text-center mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl font-display font-bold text-black dark:text-white mb-4"
+            >
+              Our <span className="text-blue-600 dark:text-blue-500">Expert Team</span>
+            </motion.h2>
+            <p className="text-slate-500 dark:text-slate-400 max-w-xl mx-auto text-sm md:text-base">
+              Meet our secondary team of specialized consultants dedicated to your health.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {expertTeam.map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="glass-card p-8 rounded-3xl border border-slate-100 dark:border-slate-800/50 shadow-sm hover:shadow-xl transition-all duration-500 group"
+              >
+                <div className="flex flex-col gap-4">
+                  <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-500">
+                    <Stethoscope size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-black dark:text-white mb-1">{member.name}</h4>
+                    <p className="text-blue-600 dark:text-blue-400 font-bold uppercase text-[10px] tracking-widest mb-3">
+                      {member.specialization}
+                    </p>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm font-medium leading-relaxed">
+                      {member.degree}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
+
   );
 }
