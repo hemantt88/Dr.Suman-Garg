@@ -1,4 +1,4 @@
-import { useEffect, useState, createContext, useContext } from "react";
+import { useEffect } from "react";
 import Lenis from "lenis";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
@@ -11,44 +11,9 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { LoadingScreen } from "./components/LoadingScreen";
-
-// Theme Context
-type Theme = "dark" | "light";
-interface ThemeContextType {
-  theme: Theme;
-  toggleTheme: () => void;
-}
-export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-
-export function useTheme() {
-  const context = useContext(ThemeContext);
-  if (!context) throw new Error("useTheme must be used within ThemeProvider");
-  return context;
-}
+import { ThemeProvider } from "./context/ThemeContext";
 
 export default function App() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem("theme") as Theme;
-      if (saved) return saved;
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
-    }
-    return "light";
-  });
-
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === "dark" ? "light" : "dark");
-  };
-
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -81,11 +46,11 @@ export default function App() {
   }, []);
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeProvider>
       <main className="min-h-screen bg-white dark:bg-slate-950 selection:bg-blue-600 selection:text-white transition-colors duration-500">
         <LoadingScreen />
         <Navbar />
-        
+
         <Hero />
         <Stats />
         <About />
@@ -102,6 +67,6 @@ export default function App() {
            <div id="scroll-progress" className="h-full bg-blue-600 transition-all duration-100 w-0" />
         </div>
       </main>
-    </ThemeContext.Provider>
+    </ThemeProvider>
   );
 }

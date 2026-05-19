@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Phone, Calendar } from "lucide-react";
+import { Menu, X, Phone, Calendar, Sun, Moon } from "lucide-react";
 import { cn } from "../lib/utils";
 import { Button } from "./ui/Button";
-
+import { useTheme } from "../context/ThemeContext";
 import { Logo } from "./ui/Logo";
 
 const navLinks = [
@@ -17,6 +17,7 @@ const navLinks = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,22 +66,37 @@ export function Navbar() {
           ))}
           
           <div className="flex items-center gap-4">
-            <Button 
-              variant="secondary" 
-              size="sm" 
+            <Button
+              variant="secondary"
+              size="sm"
               className="hidden lg:flex gap-2 !rounded-full px-5"
               onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Book Appointment
             </Button>
+
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition-colors duration-200 focus:outline-none"
+            >
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
           </div>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden flex items-center gap-2">
+        <div className="md:hidden flex items-center gap-1">
           <a href="tel:7014811667" className="p-2 text-navy-premium dark:text-white">
             <Phone size={20} />
           </a>
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            className="p-2 text-slate-600 dark:text-slate-300"
+          >
+            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2 text-navy-premium dark:text-white"
